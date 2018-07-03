@@ -47,7 +47,7 @@
       <main>
 
            <h1>Laporan Meubel</h1>
-           <centar><img src="<?php echo base_url('assets/img/IYO.jpg')?>"alt="kop surat" width="1000" height="250"></centar>
+           
            <center><p><a href="<?php echo base_url('c_excel/export_excel') ?>">Export ke Excel</a></p><p><a href="<?php echo base_url('c_excel/export_word') ?>">Export ke Word</a></p></center>
            <table border="1" width="100%">
                 <thead>

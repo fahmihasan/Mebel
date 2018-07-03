@@ -25,6 +25,7 @@
 	</head>
 
 	<body>
+	<center><img src="<?php echo base_url('assets/img/IYO.jpg')?>" alt="kop surat" width="800" height="150"></center>
 		<center><p style="text-align:center">Tabel Mebel</p></center>
 		<table>
 			<tr>

@@ -9,8 +9,7 @@
  header("Expires: 0");
  
  ?>
- <img src="<?php echo base_url('assets/img/IYO.jpg')?>"alt="kop surat" width="935" height="250">
- <table border="1" width="100%">
+ 
  
       <thead>
           

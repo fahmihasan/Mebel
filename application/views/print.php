@@ -25,7 +25,8 @@
 	</head>
 
 	<body>
-		<center><p style="text-align:center">Tabel Mebel</p></center>
+	<img src="<?php echo base_url('assets/img/pesona.jpg') ?>" alt="kop surat">
+		<p style="text-align:center">Tabel Meubel</p>
 		<table>
 			<tr>
 				<th>Nama</th>
@@ -42,7 +43,9 @@
           <td><?php echo $row->daerah ?></td>
           <td><?php echo $row->tarif ?></td>
           <td><?php echo $row->jenis ?></td>
-          <td><img src=<?=base_url("assets/uploads")."/".$row->foto?>></td>
+          <td>
+          <img src="<?php echo base_url("assets/uploads").$row->foto?>" style="width=150;" align="center">
+          </td>
 		</tr>
 		<?php }?>
 		</table>

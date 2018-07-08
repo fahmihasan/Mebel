@@ -4,19 +4,16 @@
 	class mebel extends CI_Controller
 	{
 
-		public function __construct()
-		{
+		public function __construct(){
 		parent::__construct();
 		$this->load->model('mebel_model');
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
-		if($this->session->userdata('logged_in')){
-			$session_data=$this->session->userdata('logged_in');
-			$data['username']=$session_data['username'];
-		}else{
+		if((!$this->session->userdata('username') AND ($this->session->userdata('hak_akses')!='admin'))){
 			redirect('login','refresh');
 		}
-		}
+		
+	}
 
 		public function index()
 		{

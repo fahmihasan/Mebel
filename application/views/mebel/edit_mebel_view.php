@@ -74,13 +74,13 @@
 
       <section id="main-content">
           <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i>>MEBEL Jepara </h3>
-        <div class="row">
+            <h3></i>MEBEL Jepara </h3>
+        
         
         <div class="col-md-12">
-          <div class="content-panel">
-            <h4><i class="fa fa-angle-right"></i> Daftar Meubel </h4>
-                <hr>
+          <div class="container-login100">
+            <h4><center> Daftar Meubel </center></h4>
+                
 <?php echo validation_errors(); ?>
 
 <?php echo form_open_multipart('mebel/update/'.$this->uri->segment(3)); ?>
@@ -101,11 +101,15 @@
 <div class="form-group" >
   <label class="control-label col-sm-2" >Tarif :</label>
   <div class="col-sm-10">
-  <input type="text" name="tarif" class="form-control" value="<?php echo $mebel[0]->tarif?>" placeholder="Masukkan Tarif"><br> 
+  <input type="text" name="tarif" class="form-control" value="<?php echo $mebel[0]->tarif?>" placeholder="Masukkan Tarif"><br>
+</div>
+</div>
   <div class="form-group" >
   <label class="control-label col-sm-2" >Jenis :</label>
   <div class="col-sm-10">
   <input type="text" name="jenis" class="form-control" value="<?php echo $mebel[0]->jenis?>" placeholder="Masukkan Deskripsi"><br>
+</div>
+</div>
 <div class="form-group" >
   <label class="control-label col-sm-2" >Foto :</label>
   <div class="col-sm-10">

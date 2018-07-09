@@ -24,11 +24,7 @@
 
     <script src="<?php echo base_url();?>assets/as/js/chart-master/Chart.js"></script>
     <!--===============================================================================================-->  
-  <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  
 <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
 <!--===============================================================================================-->
@@ -62,8 +58,8 @@
         
         <div class="container-login100">
       <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-            <h4><i class="fa fa-angle-right"></i> LOGIN </h4>
-                <hr>
+            <h4><center> LOGIN </center></h4>
+                
 	<?php echo form_open('login/cekLogin') ?>
 		<div class="form-group">
 		</div>

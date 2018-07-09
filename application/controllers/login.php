@@ -95,5 +95,13 @@ class login extends CI_Controller{
 		{
 			$this->load->view('mebel/tambah_user_view');
 		}
+		public function mebel_view()
+		{
+			$this->load->view('mebel/mebel_view');
+		}
+		public function mebel_view1()
+		{
+			$this->load->view('mebel/mebel_view1');
+		}
 
 }

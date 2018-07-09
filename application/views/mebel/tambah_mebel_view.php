@@ -78,28 +78,47 @@
       </aside>
       <section id="main-content">
           <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Mebel Jepara </h3>
+            <h3>Mebel Jepara</h3>
         <div class="row">
         
         <div class="col-md-12">
           <div class="content-panel">
-            <h4><i class="fa fa-angle-right"></i> Tambah Data Meubel </h4>
-                <hr>
+            <h4><center> Tambah Data Meubel </center></h4>
 	
 	<?php echo form_open_multipart('mebel/create'); ?>
 	<?php echo validation_errors();  ?>
-	<div class="form-group">
-		<label for="">Nama </label>
-		<input type="text" name="nama" class="form-control"  placeholder="Masukkan Nama">
-		<label for="">Daerah </label>
-		<input type="text" name="daerah" class="form-control"  placeholder="Masukkan Daerah">
-		<label for="">Tarif </label>
-		<input type="text" name="tarif" class="form-control"  placeholder="Masukkan Harga">
-    <label for="">Jenis</label>
-    <input type="text" name="jenis" class="form-control" placeholder="Masukkan Jenis">
-    <label for="">Foto</label>
-    <input type="file" name="userfile" size="20">
-	</div>
+	
+    <div class="form-group" >
+  <label class="control-label col-sm-2" for="nama">Nama  :</label>
+  <div class="col-sm-10">
+  <input type="text" name="nama" class="form-control" placeholder="Nama "><br>  
+  </div>
+</div>
+    <div class="form-group" >
+  <label class="control-label col-sm-2" for="nama">Daerah  :</label>
+  <div class="col-sm-10">
+  <input type="text" name="daerah" class="form-control" placeholder="Masukkan Daerah "><br>  
+  </div>
+</div>
+		<div class="form-group" >
+  <label class="control-label col-sm-2" for="nama">Tarif  :</label>
+  <div class="col-sm-10">
+  <input type="text" name="tarif" class="form-control" placeholder="Masukkan Harga"><br>  
+  </div>
+</div>
+		<div class="form-group" >
+  <label class="control-label col-sm-2" for="nama">Jenis  :</label>
+  <div class="col-sm-10">
+  <input type="text" name="jenis" class="form-control" placeholder="Masukkan Jenis "><br>  
+  </div>
+</div>
+<div class="form-group" >
+  <label class="control-label col-sm-2" for="nama">Foto  :</label>
+  <div class="col-sm-10">
+  <input type="file" name="userfile" class="form-control" placeholder="Masukkan Daerah "><br>  
+  </div>
+</div>
+	
 	<button type="submit" class="btn btn-primary">OK</button>
 	<?php echo form_close(); ?>
 

@@ -59,7 +59,10 @@
 		<label for="">Password</label>
 		<input type="password" name="password" class="form-control"  placeholder="Masukkan Password">
     <label for="">Hak Akses</label>
-    <input type="hak_akses" name="hak_akses" class="form-control"  placeholder="user / admin">
+    <select name="hak_akses" id="hak_akses" class="form-control">
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
 	</div>
 	<button type="submit" class="btn btn-primary">OK</button>
 	<?php echo form_close(); ?>

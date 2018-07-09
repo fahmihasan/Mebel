@@ -59,12 +59,10 @@
                   </div>
       <section id="main-content">
           <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Mebel Jepara </h3>
-        <div class="row">
+            <h3><center> Mebel Jepara </center></h3>
        <div class="col-md-12">
          <div class="content-panel">
-            <h4><i class="fa fa-angle-right"></i> Daftar Meubel </h4>
-            <hr>
+            <h4>Daftar Meubel </h4>
       <table class="table table-striped table-bordered" id="example">
       <thead>
         <tr>

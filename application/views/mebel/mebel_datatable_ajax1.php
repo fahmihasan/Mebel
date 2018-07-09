@@ -1,9 +1,6 @@
 
    <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/datatables.min.css">
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,13 +17,10 @@
     <link href="<?php echo base_url();?>assets/as/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link rel="<?php echo base_url();?>assets/as/stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
     <link rel="<?php echo base_url();?>assets/as/stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
-    <link rel="<?php echo base_url();?>assets/as/stylesheet" type="text/css" href="assets/lineicons/style.css">
-    <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
+    <link rel="<?php echo base_url();?>assets/as/stylesheet" type="text/css" href="assets/lineicons/style.css">    
     <link href="<?php echo base_url();?>assets/as/css/style.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/as/css/style-responsive.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>assets/as/datatables.min.css">
-
+    <link href="<?php echo base_url() ?>assets/as/datatables.min.css">
     <script src="<?php echo base_url();?>assets/as/js/chart-master/Chart.js"></script>
 
   </head>
@@ -38,7 +32,7 @@
               <div class="sidebar-toggle-box">
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
-            <a href="#" class="logo"><b>Mebel Jepara</b></a>
+            <a href="index.html" class="logo"><b>Mebel Jepara</b></a>
             <div class="top-menu">
               <ul class="nav pull-right top-menu">
                     <li><a class="logout" href="<?php echo site_url('');?>">Logout</a></li>
@@ -77,13 +71,12 @@
 
       <section id="main-content">
           <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i> Mebel Jepara </h3>
+            <h3><center>Mebel Jepara</center> </h3>
         <div class="row">
         
         <div class="col-md-12">
           <div class="content-panel">
-            <h4><i class="fa fa-angle-right"></i> Daftar Meubel </h4>
-                <hr>
+            <h4> Daftar Meubel </h4>
 
       <table class="table table-striped table-bordered" id="example">
       <thead>
@@ -93,29 +86,9 @@
           <th>Tarif </th>
           <th>Jenis</th>
           <th>Foto</th>
- 
-
         </tr>
       </thead>
-      
-      <tbody>
-        <?php foreach ($all as $row):?>
-        <tr>
-          <td><?php echo $row->nama; ?></td>
-          <td><?php echo $row->daerah; ?></td>
-          <td><?php echo $row->tarif; ?></td>
-          <td><?php echo $row->jenis; ?></td>
-          <td><img src=<?=base_url("assets/uploads")."/".$row->foto?>></td>
-          </tr>
-      <?php endforeach; ?>
-      </tbody>
       </table>
-      <script src="<?php echo base_url() ?>assets/datatables.min.js"></script>
-      <script type="text/javascript">
-      $(document).ready(function() {
-       $('#example').DataTable();
-       });
-        </script>
       </div>
 </div>
 </div>
@@ -130,7 +103,7 @@
 
   </section>
 
-       <script src="<?php echo base_url();?>assets/as/js/jquery.js"></script>
+    <script src="<?php echo base_url();?>assets/as/js/jquery.js"></script>
     <script src="<?php echo base_url();?>assets/as/js/jquery-1.8.3.min.js"></script>
     <script src="<?php echo base_url();?>assets/as/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="<?php echo base_url();?>assets/as/js/jquery.dcjqaccordion.2.7.js"></script>
@@ -144,16 +117,55 @@
     <script type="text/javascript" src="<?php echo base_url();?>assets/as/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/as/js/gritter-conf.js"></script>
 
+    <script src="assets/as/js/sparkline-chart.js"></script>    
+  <script src="assets/as/js/zabuto_calendar.js"></script>
+<script src="<?php echo base_url()?>assets/as/datatables.min.js"></script>
+      <script type="text/javascript">
+      $(document).ready(function() {
+       $('#example').DataTable({
+        "processing":true,
+        "serverSide":true,
+        "lengthMenu":[[1,3,6,-1],[1,3,6,"All"]],
+        "ajax":{
+          url : "<?php echo site_url('mebel/data_server')?>",
+          type : "POST"
+        },
+        "columnDefs":
+        [
+          {
+            "targets":0,
+            "data":"nama",
+          },
 
-    <script src="assets/js/sparkline-chart.js"></script>    
-  <script src="assets/js/zabuto_calendar.js"></script>
-    <script>
+          {
+            "targets":1,
+            "data":"daerah",
+            "searchable":false,
+          },
 
-      $(function(){
-          $('select.styled').customSelect();
-      });
+          {
+            "targets":2,
+            "data":"tarif",
+            "searchable":false,
+          },
 
-  </script>
-<script src="<?php echo base_url()?>assets/datatables.min.js"></script>
-      
+          {
+            "targets":3,
+            "data":"jenis",
+            "searchable":false,
+          },
+
+          {
+            "targets":4,
+            "data":"foto",
+            "searchable":false,
+            "render":function(data,type,full,meta){
+              return '<img src="<?=base_url()?>assets/uploads/'+data+'">';
+            }
+          },
+        ]
+       });
+       });
+        </script>
+</body>
 </html>

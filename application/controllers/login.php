@@ -39,6 +39,7 @@ class login extends CI_Controller{
 					if ($akses=='admin'){
 						$this->load->view('mebel/mebel_view', $data);
 					}else{
+						
 						$this->load->view('mebel/mebel_datatable_ajax1', $data);
 					}
 				}else{

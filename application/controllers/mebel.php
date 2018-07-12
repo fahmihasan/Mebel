@@ -137,6 +137,10 @@
 		{
 			$this->load->view('mebel/mebel_datatable_ajax1');
 		}
+		public function forget()
+		{
+			$this->load->view('mebel/forget');
+		}
 
 		public function data_server()
 		{
@@ -145,6 +149,29 @@
 				->select('id,nama,daerah,tarif,jenis,foto')
 				->from('mebel');
 				echo $this->datatables->generate();
+		}
+		function savePass(){
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+			$newpass = $this->input->post('newpass');
+			$confpass = $this->input->post('confpass');
+			$cek = $this->db->where('password',md5($password))->get('user')->num_rows();
+			if($cek>0){
+				if($newpass==$confpass){
+					$data = array(
+						'password' => md5($newpass),
+						'username' => $username
+					);
+					$this->db->where('username',$this->session->userdata('username'))->set($data)->update('user');
+					$this->session->set_userdata('username',$username);
+					$this->session->set_flashdata('pesan', 'Sukses update');
+				}else{
+					$this->session->set_flashdata('pesan', 'Konfrmasi Password tidak sesuai');
+				}
+			}else{
+					$this->session->set_flashdata('pesan', 'Password lama tidak sesuai');
+			}
+			redirect(site_url().'/mebel/forget');
 		}
 	}
  ?>

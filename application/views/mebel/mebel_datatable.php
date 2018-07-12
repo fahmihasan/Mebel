@@ -51,6 +51,12 @@
                       </a>
                   </li>
                   <li class="mt">
+                      <a href="<?=site_url()?>/mebel/forget">
+                          <i class="fa fa-dashboard"></i>
+                          <span>Lupa Password</span>
+                      </a>
+                  </li>
+                  <li class="mt">
                       <a href="<?=site_url()?>/cetak">
                           <i class="fa fa-dashboard"></i>
                           <span>Print Data Pdf</span>

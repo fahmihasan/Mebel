@@ -56,6 +56,12 @@
                       </a>
                   </li>
                   <li class="mt">
+                      <a href="<?=site_url()?>/mebel/forget">
+                          <i class="fa fa-dashboard"></i>
+                          <span>Lupa Password</span>
+                      </a>
+                  </li>
+                  <li class="mt">
                       <a href="<?=site_url()?>/mebel/create">
                           <i class="fa fa-dashboard"></i>
                           <span>Tambah Data </span>

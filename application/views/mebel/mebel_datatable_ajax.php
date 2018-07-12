@@ -45,12 +45,17 @@
               <ul class="sidebar-menu" id="nav-accordion">
               
                   <p class="centered"><a href="profile.html"><img src="<?php echo base_url('assets/as/img/ui-sam.jpg"');?>"  class="img-circle" width="60"></a></p>
-                  <h5 class="centered">Meubel</h5>
-                    
+                  <h5 class="centered">Mebel</h5> 
                   <li class="mt">
                       <a href="<?=site_url()?>/mebel/datatable_ajax">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
+                      </a>
+                  </li>
+                  <li class="mt">
+                      <a href="<?=site_url()?>/mebel/forget">
+                          <i class="fa fa-dashboard"></i>
+                          <span>Lupa Password</span>
                       </a>
                   </li>
                   <li class="mt">

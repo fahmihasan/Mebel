@@ -1,8 +1,7 @@
 
-   <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/datatables.min.css">
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,19 +12,16 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>WEB MEUBEL</title>
+    <title>Mebel Jepara</title>
 
     <link href="<?php echo base_url();?>assets/as/css/bootstrap.css" rel="stylesheet">
- 
     <link href="<?php echo base_url();?>assets/as/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link rel="<?php echo base_url();?>assets/as/stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
     <link rel="<?php echo base_url();?>assets/as/stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
-    <link rel="<?php echo base_url();?>assets/as/stylesheet" type="text/css" href="assets/lineicons/style.css">
-    <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
+    <link rel="<?php echo base_url();?>assets/as/stylesheet" type="text/css" href="assets/lineicons/style.css">    
+    
     <link href="<?php echo base_url();?>assets/as/css/style.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/as/css/style-responsive.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>assets/as/datatables.min.css">
 
     <script src="<?php echo base_url();?>assets/as/js/chart-master/Chart.js"></script>
 
@@ -50,7 +46,7 @@
 
               <ul class="sidebar-menu" id="nav-accordion">
               
-                  <p class="centered"><a href="profile.html"><img src="<?php echo base_url('assets/as/img/ui-sam.jpg"');?>"  class="img-circle" width="60"></a></p>
+                  <p class="centered"><a href="profile.php"><img src="<?php echo base_url('assets/as/img/ui-sam.jpg"');?>"  class="img-circle" width="60"></a></p>
                   <h5 class="centered">Meubel</h5>
                     
                   <li class="mt">
@@ -86,74 +82,57 @@
               </ul>
           </div>
       </aside>
-
       <section id="main-content">
           <section class="wrapper">
-            <h3><center> Mebel Jepara </center></h3>
+            <h3>Mebel Jepara</h3>
         <div class="row">
         
         <div class="col-md-12">
           <div class="content-panel">
-            <h4> Daftar Meubel </h4>
-      
-      <table class="table table-striped table-bordered" id="example">
-      <thead>
-        <tr>
-          <th>Nama</th>
-          <th>Daerah</th>
-          <th>Tarif</th>
-          <th>Jenis</th>
-          <th>Foto</th>
-          <th>Edit</th>
-          <th>Hapus</th>
-
-        </tr>
-      </thead>
-
-  
-      <tbody>
-        <?php foreach ($all as $row):?>
-        <tr>
-          <td><?php echo $row->nama; ?></td>
-          <td><?php echo $row->daerah; ?></td>
-          <td><?php echo $row->tarif; ?></td>
-          <td><?php echo $row->jenis; ?></td>
-          <td><img src=<?=base_url("assets/uploads")."/".$row->foto?>></td>
-
-          <td>
-          <a href="<?php echo site_url()?>/mebel/Update/<?php echo $row->id ?>">
-          <p data-placement="top" data-toggle="tooltip" title="Edit">
-          <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="model" data-target="#edit">
-          <span class="glyphicon glyphicon-pencil">
-          </span></button></p></a></td>
-
-          <td>
-          <a href="<?php echo site_url()?>/mebel/delete/<?php echo $row->id ?>">
-          <p data-placement="top" data-toggle="tooltip" title="Delete">
-          <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="model" data-target="#delete">
-          <span class="glyphicon glyphicon-trash">
-          </span></button></p></a></td>
-
-        </tr>
-      <?php endforeach; ?>
-      </tbody>
-      </table>
-      </div>
+            <h4><center> Tambah Data Meubel </center></h4>
+	
+	<?php $row = $this->db->where('username',$this->session->userdata('username'))->get('user')->row_array(); echo form_open_multipart('mebel/savePass'); ?>
+	<?php echo validation_errors(); if($pesan=$this->session->flashdata('pesan')){ echo $pesan;} ?>
+	
+    <div class="form-group" >
+  <label class="control-label col-sm-2" for="nama">Username  :</label>
+  <div class="col-sm-10">
+  <input type="text" name="username" class="form-control" placeholder="username" value="<?=$row['username']?>"><br>  
+  </div>
 </div>
+    <div class="form-group" >
+  <label class="control-label col-sm-2" for="nama">Password Lama  :</label>
+  <div class="col-sm-10">
+  <input type="password" name="password" class="form-control" placeholder="password lama"><br>  
+  </div>
 </div>
+<div class="form-group" >
+  <label class="control-label col-sm-2" for="nama">Password Baru  :</label>
+  <div class="col-sm-10">
+  <input type="password" name="newpass" class="form-control" placeholder="password baru"><br>  
+  </div>
+</div>
+<div class="form-group" >
+  <label class="control-label col-sm-2" for="nama">Konfirmasi  :</label>
+  <div class="col-sm-10">
+  <input type="password" name="confpass" class="form-control" placeholder="konfirmasi"><br>  
+  </div>
+</div>
+	
+	
+	<button type="submit" class="btn btn-primary">OK</button>
+	<?php echo form_close(); ?>
 
-                        </div>
-                    </div>
       <footer class="site-footer">
           <div class="text-center">
-              Mebel Jepara
-              <a href="basic_table.html#" class="go-top">
+              Mebel JEPARA
+              <a href="#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
       </footer>
-  </section>
 
+  </section>
 
     <script src="<?php echo base_url();?>assets/as/js/jquery.js"></script>
     <script src="<?php echo base_url();?>assets/as/js/jquery-1.8.3.min.js"></script>
@@ -169,55 +148,5 @@
     <script type="text/javascript" src="<?php echo base_url();?>assets/as/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/as/js/gritter-conf.js"></script>
 
-    <!--script for this page-->
     <script src="assets/js/sparkline-chart.js"></script>    
-  <script src="assets/js/zabuto_calendar.js"></script>  
-   <!--script for this page-->
-    
-<script src="<?php echo base_url()?>assets/datatables.min.js"></script>
-      <script type="text/javascript">
-      $(document).ready(function() {
-       $('#example').DataTable({
-        "procesing":true,
-        "serverSide":true,
-        "lengthMenu":[[1,3,6,-1]],[[1,3,6,"All"]],
-        "ajax":{
-          url : "<?php echo site_url('mebel/data_server')?>"
-          type : "POST"
-        },
-        "columnDefs":
-        [
-          {
-            "targets":0,
-            "data":"nama",
-          }
-
-          {
-            "targets":1,
-            "data":"daerah",
-          }
-
-          {
-            "targets":2,
-            "data":"tarif",
-          }
-
-          {
-            "targets":3,
-            "data":"jenis",
-          }
-
-          {
-            "targets":4,
-            "data":"foto",
-            "render":function(data,type,full,meta){
-              return '<img src="<?=base_url()?>asset/uploads/'+data+'">';
-            }
-          },
-        ]
-       });
-       });
-        </script>
-
-  </body>
-</html>
+  <script src="assets/js/zabuto_calendar.js"></script>

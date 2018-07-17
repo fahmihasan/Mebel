@@ -56,7 +56,7 @@
                   <li class="mt">
                       <a href="<?=site_url()?>/mebel/forget">
                           <i class="fa fa-dashboard"></i>
-                          <span>Lupa Password</span>
+                          <span>Ganti Password</span>
                       </a>
                   </li>
                   <li class="mt">
